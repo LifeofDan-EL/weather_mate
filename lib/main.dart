@@ -29,7 +29,10 @@ class MyApp extends StatelessWidget {
                 child:Icon(Icons.add, size: 30, color: Colors.white,),
               ),
               Row(
-                Text('Enugu',)
+                Text('Enugu',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
               )
             ],
           ),
