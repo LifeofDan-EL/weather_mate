@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black45,
           appBar: AppBar(
             backgroundColor: Colors.black45,
-                       ),
-          body: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+          ),
+          body:
+          Stack(
             children: <Widget>[
               Align(
                 alignment: Alignment.topLeft,
@@ -25,13 +25,13 @@ class MyApp extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.topRight,
-                child:Icon(Icons.add, size: 50, color: Colors.white,),
+                child:Icon(Icons.add, size: 30, color: Colors.white,),
               ),
+              Row()
             ],
           ),
           ),
       );
-
-
 }
+
 }
