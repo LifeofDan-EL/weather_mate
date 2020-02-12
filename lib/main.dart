@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.black45,
           ),
           body:
+
           Stack(
             children: <Widget>[
               Align(
@@ -27,7 +28,9 @@ class MyApp extends StatelessWidget {
                 alignment: Alignment.topRight,
                 child:Icon(Icons.add, size: 30, color: Colors.white,),
               ),
-              Row()
+              Row(
+                Text('Enugu',)
+              )
             ],
           ),
           ),
