@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
+import './weatherData.dart';
+
 class TempCard extends StatelessWidget {
+
+  final WeatherData weather;
+
+  Weather({Key key, @required this.weather}) : super (key: key);
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -13,20 +20,20 @@ class TempCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              '30',
+        '${weather.temp.toString()}°F',
               style: TextStyle(
                   fontSize: 90,
                   fontWeight: FontWeight.w900,
                   color: Colors.white),
             ),
             Text(
-              'Clear',
+              weather.main,
               style: TextStyle(fontSize: 25, color: Colors.white),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 120, bottom: 70),
+              padding: const EdgeInsets.only(top: 100, bottom: 70),
               child: Text(
-                'Light raidndodiojidmipdoojkdmpodlr jo j',
+                weather.feels,
                 style: TextStyle(
                   color: Colors.white54,
                 ),
@@ -42,10 +49,8 @@ class TempCard extends StatelessWidget {
                   '28 --- 40',
                   style: TextStyle(color: Colors.white54),
                 ),
-                Icon(
-                  Icons.cloud,
-                  color: Colors.red,
-                )
+                Image.network('https://openweathermap.org/img/w/${weather.icon}.png'
+                ),
               ],
             )
           ],
