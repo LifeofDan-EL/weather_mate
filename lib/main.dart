@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
                           Padding(
                             padding: const EdgeInsets.only(left: 30),
                             child: Text(
-                              'Space Sector 2424',
+                              '${weatherData["city"]["name"]}',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -82,7 +82,7 @@ class _MyAppState extends State<MyApp> {
                                 });
                               },
                               height: 450,
-                              items: [0, 1, 2, 3, 4].map((i) {
+                              items: [1, 2, 3, 4, 5].map((i) {
                                 return Builder(
                                   builder: (BuildContext context) {
 //                                    print([weatherData["list"]][0]);
@@ -136,7 +136,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     final forecastResponse = await http.get(
-        'https://api.openweathermap.org/data/2.5/forecast/daily?q=Enugu&appid=a18494d4eee39d449c841066b7e55685&cnt=7&units=metric');
+        'https://api.openweathermap.org/data/2.5/forecast/daily?q=Nsukka&appid=a18494d4eee39d449c841066b7e55685&cnt=7&units=metric');
 
     if (forecastResponse.statusCode == 200) {
       return setState(() {

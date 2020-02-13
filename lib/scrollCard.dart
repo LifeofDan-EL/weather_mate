@@ -33,7 +33,7 @@ class TempCard extends StatelessWidget {
               style: TextStyle(fontSize: 25, color: Colors.white),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 100, bottom: 70),
+              padding: const EdgeInsets.only(top: 90, bottom: 70),
               child: Text(
                 weather.feels,
                 style: TextStyle(
