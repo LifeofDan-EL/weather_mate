@@ -6,10 +6,12 @@ class TempCard extends StatelessWidget {
 
   final WeatherData weather;
 
-  Weather({Key key, @required this.weather}) : super (key: key);
+  TempCard({@required this.weather});
+
 
   @override
   Widget build(BuildContext context) {
+
     return Card(
       elevation: 3,
       color: Colors.black,
@@ -20,7 +22,7 @@ class TempCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-        '${weather.temp.toString()}°F',
+        '${weather.temp.toInt().toString()}°C',
               style: TextStyle(
                   fontSize: 90,
                   fontWeight: FontWeight.w900,
@@ -46,7 +48,7 @@ class TempCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  '28 --- 40',
+                  '${weather.min.toString()} --- ${weather.max.toString()}' ,
                   style: TextStyle(color: Colors.white54),
                 ),
                 Image.network('https://openweathermap.org/img/w/${weather.icon}.png'
