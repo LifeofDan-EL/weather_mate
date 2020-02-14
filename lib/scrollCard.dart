@@ -41,13 +41,6 @@ class TempCard extends StatelessWidget {
                 ),
               ),
             ),
-              Text(
-                'Date is ${weather.date.toString()}',
-                style: TextStyle(
-                  color: Colors.white54,
-                ),
-              ),
-
             Divider(
               color: Colors.white12,
             ),
@@ -56,7 +49,8 @@ class TempCard extends StatelessWidget {
               children: <Widget>[
                 Text(
                   '${weather.min.toString()}°C min --- ${weather.max.toString()}°C max' ,
-                  style: TextStyle(color: Colors.white54),
+                  style: TextStyle(color: Colors.white54,
+                  fontSize: 12),
                 ),
                 Image.network('https://openweathermap.org/img/w/${weather.icon}.png'
                 ),
