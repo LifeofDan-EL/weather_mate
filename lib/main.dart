@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
             backgroundColor: Color(0xFF222222),
             appBar: AppBar(
               leading: Icon(
-                Icons.menu,
+                Icons.sort,
                 color: Colors.white,
               ),
               actions: <Widget>[Icon(Icons.add, color: Colors.white)],

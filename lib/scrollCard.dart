@@ -33,7 +33,7 @@ class TempCard extends StatelessWidget {
               style: TextStyle(fontSize: 25, color: Colors.white),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 90, bottom: 70),
+              padding: const EdgeInsets.only(top: 80, bottom: 60),
               child: Text(
                 weather.feels,
                 style: TextStyle(
@@ -41,6 +41,13 @@ class TempCard extends StatelessWidget {
                 ),
               ),
             ),
+              Text(
+                'Date is ${weather.date.toString()}',
+                style: TextStyle(
+                  color: Colors.white54,
+                ),
+              ),
+
             Divider(
               color: Colors.white12,
             ),
@@ -48,7 +55,7 @@ class TempCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  '${weather.min.toString()} --- ${weather.max.toString()}' ,
+                  '${weather.min.toString()}°C min --- ${weather.max.toString()}°C max' ,
                   style: TextStyle(color: Colors.white54),
                 ),
                 Image.network('https://openweathermap.org/img/w/${weather.icon}.png'
