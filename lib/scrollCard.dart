@@ -28,7 +28,7 @@ class TempCard extends StatelessWidget {
             Text(
         '${weather.temp.toInt().toString()}°C',
               style: TextStyle(
-                  fontSize: 90,
+                  fontSize: 80,
                   fontWeight: FontWeight.w900,
                   color: Colors.white),
             ),
@@ -62,7 +62,7 @@ class TempCard extends StatelessWidget {
                   Text(
                     '${weather.min.toString()}°C min --- ${weather.max.toString()}°C max' ,
                     style: TextStyle(color: Colors.white54,
-                    fontSize: 12),
+                    fontSize: 13),
                   ),
                   Image.network('https://openweathermap.org/img/w/${weather.icon}.png'
                   ),
