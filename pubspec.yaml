@@ -26,6 +26,8 @@ dependencies:
   carousel_slider: 1.4.1
   http: "^0.11.3+16"
 
+  intl: ^0.16.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

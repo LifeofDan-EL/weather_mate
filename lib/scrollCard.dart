@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import './weatherData.dart';
 
@@ -8,9 +9,12 @@ class TempCard extends StatelessWidget {
 
   TempCard({@required this.weather});
 
+  var format = DateFormat('EEEE, dd, MMM, yyyy');
 
   @override
   Widget build(BuildContext context) {
+
+      var date = DateTime.parse('${weather.date}');
 
     return Card(
       elevation: 3,
@@ -33,7 +37,7 @@ class TempCard extends StatelessWidget {
               style: TextStyle(fontSize: 25, color: Colors.white),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 80, bottom: 60),
+              padding: const EdgeInsets.only(top: 60, bottom: 50),
               child: Text(
                 weather.feels,
                 style: TextStyle(
@@ -41,20 +45,29 @@ class TempCard extends StatelessWidget {
                 ),
               ),
             ),
+            Text(
+               format.format(date),
+              style: TextStyle(
+                color: Colors.white54,
+              ),
+            ),
             Divider(
               color: Colors.white12,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  '${weather.min.toString()}°C min --- ${weather.max.toString()}°C max' ,
-                  style: TextStyle(color: Colors.white54,
-                  fontSize: 12),
-                ),
-                Image.network('https://openweathermap.org/img/w/${weather.icon}.png'
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    '${weather.min.toString()}°C min --- ${weather.max.toString()}°C max' ,
+                    style: TextStyle(color: Colors.white54,
+                    fontSize: 12),
+                  ),
+                  Image.network('https://openweathermap.org/img/w/${weather.icon}.png'
+                  ),
+                ],
+              ),
             )
           ],
         ),
