@@ -14,7 +14,7 @@ class TempCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-      var date = DateTime.parse('${weather.date}');
+      var date = DateTime.parse('${weather.extra}');
 
     return Card(
       elevation: 3,
@@ -41,6 +41,7 @@ class TempCard extends StatelessWidget {
               child: Text(
                 weather.feels,
                 style: TextStyle(
+                  fontSize: 20,
                   color: Colors.white54,
                 ),
               ),
@@ -60,9 +61,9 @@ class TempCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    '${weather.min.toString()}°C min --- ${weather.max.toString()}°C max' ,
+                    '${weather.min.toString()}°C min --- ${weather.max.toString()}°C max',
                     style: TextStyle(color: Colors.white54,
-                    fontSize: 13),
+                    fontSize: 12),
                   ),
                   Image.network('https://openweathermap.org/img/w/${weather.icon}.png'
                   ),

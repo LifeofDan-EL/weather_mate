@@ -8,20 +8,21 @@ class WeatherData {
   final String icon;
   final double min;
   final double max;
+  final String extra;
 
-  WeatherData ({ this.temp, this.main,this.feels, this.date, this.icon, this.min, this.max,});
+  WeatherData ({ this.temp, this.main,this.feels, this.date, this.icon, this.min, this.max, this.extra});
 
   factory WeatherData.fromJson(Map<String, dynamic>json){
     return WeatherData(
 //      location: json['name'],
-      temp: json['temp']['day'],
+      temp: json['main']['temp'],
       main: json['weather'][0]['main'],
       feels: json['weather'][0]['description'],
-      date: new DateTime.fromMicrosecondsSinceEpoch(json['dt'] * 1000, isUtc: false),
+      extra: json['dt_txt'],
+      date: new DateTime.fromMillisecondsSinceEpoch(json['dt'] , isUtc: false),
       icon: json['weather'][0]['icon'],
-      min: json['temp']['min'],
-      max: json['temp']['max'],
-
+      min: json['main']['temp_min'],
+      max: json['main']['temp_min'],
     );
   }
 }

@@ -136,7 +136,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     final forecastResponse = await http.get(
-        'https://api.openweathermap.org/data/2.5/forecast/daily?q=London&appid=a18494d4eee39d449c841066b7e55685&cnt=7&units=metric');
+        'http://api.openweathermap.org/data/2.5/forecast?q=Enugu&appid=8b7013ec963de35f718a1ebff7eb1843&cnt=7&units=metric');
 
     if (forecastResponse.statusCode == 200) {
       return setState(() {
