@@ -87,7 +87,6 @@ class _MyAppState extends State<MyApp> {
                                   builder: (BuildContext context) {
 //                                    print([weatherData["list"]][0]);
                                     return TempCard(
-
                                       weather: WeatherData.fromJson(
                                           weatherData['list'][i]),
                                     );
